@@ -53,9 +53,6 @@ def getBilibili(url):
                 if not state:
                     break
                 page.click(".be-pager-next")
-            import pdb
-
-            pdb.set_trace()
             return json.dumps({"data": data})
 
 
