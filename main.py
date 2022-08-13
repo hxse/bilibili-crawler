@@ -35,13 +35,8 @@ def getBilibili(url):
             page.goto(url)
 
             data = []
-            # page.wait_for_selector("span.be-pager-total", state="attached")
-            # page.wait_for_selector("span.be-pager-total", state="visible")
-            # state = page.is_visible(".be-pager-next")
             while 1:
                 # page.wait_for_timeout(3 * 1000)
-                # page.wait_for_selector(".be-pager-next", state="attached")
-                # page.wait_for_selector("span.be-pager-total", state="visible")
 
                 page.wait_for_selector("span.be-pager-total", state="attached")
                 el = page.query_selector("span.be-pager-total")
