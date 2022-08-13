@@ -37,10 +37,11 @@ def getBilibili(url):
             data = []
             while 1:
                 # page.wait_for_timeout(3 * 1000)
-
+                page.wait_for_load_state()
                 page.wait_for_selector("span.be-pager-total", state="attached")
                 el = page.query_selector("span.be-pager-total")
-                if el.text_content() == "共 1 页，":
+                numState = el.text_content()
+                if numState == "共 1 页，" or numState == "共 0 页，":
                     state = False
                 else:
                     page.wait_for_selector("span.be-pager-total", state="visible")
