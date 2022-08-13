@@ -45,7 +45,6 @@ def getBilibili(url):
                 else:
                     page.wait_for_selector("span.be-pager-total", state="visible")
                     state = page.query_selector(".be-pager-next").is_visible()
-                print(state)
 
                 pageData = get_info(page)
                 data.extend(pageData)
@@ -53,7 +52,7 @@ def getBilibili(url):
                 if not state:
                     break
                 page.click(".be-pager-next")
-            return json.dumps({"data": data})
+            return json.dumps({"data": data, "count": len(data)})
 
 
 if __name__ == "__main__":
