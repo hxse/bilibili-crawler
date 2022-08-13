@@ -36,7 +36,7 @@ def getBilibili(url):
 
             data = []
             while 1:
-                # page.wait_for_timeout(3 * 1000)
+                page.wait_for_timeout(3 * 1000)
                 page.wait_for_load_state()
                 page.wait_for_selector("span.be-pager-total", state="attached")
                 el = page.query_selector("span.be-pager-total")
