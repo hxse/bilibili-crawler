@@ -58,28 +58,6 @@ def getBilibili(url):
             pdb.set_trace()
             return json.dumps({"data": data})
 
-            # page.wait_for_selector("span.be-pager-total", state="visible")
-            # el = page.query_selector("span.be-pager-total")
-            # # page.click("li.be-pager-next")
-            # x = re.match("^共 (\d*) 页，$", el.text_content())
-            # count = x.group(1)
-            # print(count)
-
-            # page.wait_for_selector(".be-pager-next")
-            # nextState = page.query_selector(".be-pager-next").is_disabled()
-
-            # data = []
-            # for i in range(1, int(count) + 1):
-            #     if i != 1:
-            #         page.goto(url + f"?page={i}")
-
-            #     pageData = get_info(page)
-            #     data.extend(pageData)
-            # print(data, len(data))
-
-            # print(page.title())
-            # browser.close()
-
 
 if __name__ == "__main__":
     fire.Fire({"gb": getBilibili})
